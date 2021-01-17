@@ -1,12 +1,14 @@
-import { hello } from './hello';
-import Matrix from './matrix/matrix'
+// import { hello } from './hello';
+// import Matrix from './matrix/matrix'
+import Robot from "./robot-name/robot-name";
 
 class App {
-    /** Entry point of our app */
-    public static start() {
-        console.log(hello('Running ...'));
-        new Matrix('1 2\n3 4')
-    }
+  /** Entry point of our app */
+  public static start(): void {
+    console.log("Running ...");
+    const robot = new Robot();
+    console.log(robot);
+  }
 }
 
 App.start();

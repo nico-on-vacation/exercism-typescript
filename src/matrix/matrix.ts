@@ -1,33 +1,17 @@
 class Matrix {
-  private p_columns: number[][];
-  private p_rows: number[][];
-
-  get columns() {
-    return this.p_columns;
-  }
-
-  get rows() {
-    // return this.p_rows;
-    return [];
-  }
+  columns: number[][];
+  rows: number[][];
 
   constructor(matrixNumbers: string) {
-    const matrix = matrixNumbers
+    this.rows = matrixNumbers
       .split("\n")
       .map((x) => x.split(" ").map((x) => Number(x)));
-    // console.log(matrix);
-    this.p_columns = matrix;
-    this.p_rows = this.getRows(matrix);
-  }
 
-  private getRows(matrix: number[][]) {
-    let rowCount = 0;
+    this.columns = [];
 
-    for (const column in matrix) {
-      console.log("Column: ", column);
+    for (let i = 0; i < this.rows.length; i++) {
+      this.columns.push(this.rows.map((row) => row[i]));
     }
-
-    return [[]]
   }
 }
 

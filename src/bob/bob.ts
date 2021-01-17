@@ -9,12 +9,12 @@ class Bob {
 
   private isUpperCase = (message: string) => {
     //if contains no letter -> false
-    if(this.containsLetters(message)){
-      return message === message.toUpperCase()
+    if (this.containsLetters(message)) {
+      return message === message.toUpperCase();
     } else {
-      return false
+      return false;
     }
-  }
+  };
   private isMessage = (message: string) =>
     message.split("").some((x) => x.match(/[a-z]|[0-9]/i));
 
@@ -22,8 +22,8 @@ class Bob {
     message.split("").some((x) => x.match(/[a-z]/i));
 
   hey(message: string) {
-    const input = message.replaceAll(" ", "");
-
+    // const input = message.replaceAll(" ", ""); 
+    const input = message
     let answer = "Whatever.";
 
     if (this.isQuestion(input)) {
